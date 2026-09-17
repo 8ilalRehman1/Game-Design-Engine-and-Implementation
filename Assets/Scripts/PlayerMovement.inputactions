@@ -36,26 +36,37 @@
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "43ad86f4-71b5-43f2-a50e-50b36283ec09",
-                    "path": "<Keyboard>/d",
+                    "name": "2D Vector",
+                    "id": "9e9edc44-1129-4050-88cc-92cae598bdb8",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "walking",
-                    "isComposite": false,
+                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "7422f5d1-e663-4235-9dde-6c745769b278",
+                    "name": "left",
+                    "id": "348688cd-5baf-498f-8390-5652923ab263",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "walking",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "344b25ca-54d2-449c-9b94-c76af1965bdf",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "walking",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
