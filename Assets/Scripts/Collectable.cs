@@ -1,14 +1,12 @@
 using UnityEngine;
 
-public class Collectable : MonoBehaviour
+public class Collectable : MonoBehaviour, CollectInterface
 {
-    public bool isCollected;
+    [SerializeField] bool isCollected;
+    [SerializeField] float healthIncrease = 20f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public 
+
 
     // Update is called once per frame
     void Update()
@@ -18,5 +16,5 @@ public class Collectable : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void Collect() { }
+    
 }

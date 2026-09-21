@@ -4,7 +4,7 @@ public class EvilTile : Enemy
 {
     public override void EnemyMove()
     {
-        transform.Translate(Vector2.left * (speed * 0.9f) * Time.deltaTime);
+        transform.Translate(Vector2.left * (speed * 0.1f) * Time.deltaTime);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

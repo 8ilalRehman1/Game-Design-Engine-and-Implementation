@@ -3,7 +3,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private float damage = 10;
-    [SerializeField] protected float speed = 10f;
+    [SerializeField] protected float speed = 0.01f;
 
     [SerializeField] private PlayerScript PlayerReference;
 

@@ -387,6 +387,50 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &243327053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243327055}
+  - component: {fileID: 243327054}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &243327054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243327053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda5a9ee60a014446adc0bbdfc09f6b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &243327055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243327053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1481095, y: -1.074019, z: 0.0051886467}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +651,7 @@ Transform:
   m_GameObject: {fileID: 540163961}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.14608526, y: -1.8187, z: 0}
+  m_LocalPosition: {x: 7.49, y: -1.84, z: 0}
   m_LocalScale: {x: 1, y: 0.2425, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -671,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8158b051591cc2f4eab129f3ee20a695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 0.1
   PlayerReference: {fileID: 1412983266}
 --- !u!1 &619394800
 GameObject:
@@ -875,7 +919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45cf0bc06abae704aadb983bec05363a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 0.1
   PlayerReference: {fileID: 1412983266}
 --- !u!212 &801387079
 SpriteRenderer:
@@ -941,7 +985,7 @@ Transform:
   m_GameObject: {fileID: 801387077}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.53, y: -1.51, z: 0}
+  m_LocalPosition: {x: -7.48, y: -1.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1351,3 +1395,4 @@ SceneRoots:
   - {fileID: 227048021}
   - {fileID: 786365646}
   - {fileID: 801387080}
+  - {fileID: 243327055}
