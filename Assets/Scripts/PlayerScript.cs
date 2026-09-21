@@ -1,14 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
 
     private Rigidbody2D rb;
-    private float movementX;
-    private float speed = 1;
 
-    public bool isDead;
+    [SerializeField] float speed = 10;
+    [SerializeField] float jumpForce = 10;
+    [SerializeField] float healthPoints = 300;
+    [SerializeField] bool isDead;
+    [SerializeField] bool winState;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,20 +19,45 @@ public class PlayerScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
     }
-    private void FixedUpdate()
-    {
-        Vector3 movement = new Vector2(movementX, 0.0f);
-        rb.AddForce(movement * speed);
-    }
-    void OnMove(InputValue movementValue)
-    {
-        Vector2 movementVector = movementValue.Get<Vector2>();
-        movementX = movementVector.x;
-
-    }
     // Update is called once per frame
     void Update()
     {
-        
+        float moveInput = Input.GetAxis("Horizontal"); 
+        rb.linearVelocity = new Vector2 (moveInput * speed, rb.linearVelocity.y);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        }
+        if (healthPoints == 0)
+        {
+            Die();
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Goal")
+        {
+            winState = true;
+            Debug.Log("You Win!");
+            
+        }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log($"{healthPoints}");
+            Debug.Log("Ouch");
+        }
+    }
+    private void Die()
+    {
+        Debug.Log("You Lose! Level Restart.");
+        isDead = true;
+        Destroy(gameObject);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+    }
+
+    public void TakeDamage(float damage)
+    {
+        healthPoints -= damage;
     }
 }

@@ -1,22 +1,20 @@
 using UnityEngine;
 
-public class Collectable : MonoBehaviour
+public class EvilHexagon : Enemy
 {
-    public bool isCollected;
-
+    public override void EnemyMove()
+    {
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Debug.Log("MUHAHA I'M A EVIL HEXAGON");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isCollected == true)
-        {
-            Destroy(gameObject);
-        }
+        
     }
-    public void Collect() { }
 }

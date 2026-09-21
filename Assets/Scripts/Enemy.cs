@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private float damage = 1;
-    private float health = 2;
-    private float speed = 3;
+    private float damage = 10;
+    [SerializeField] protected float speed = 10f;
 
-    public Rigidbody2D rb;
-    public bool isDead;
+    [SerializeField] private PlayerScript PlayerReference;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,7 +23,13 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            PlayerReference.TakeDamage(damage);
         }
     }
+
+    public virtual void EnemyMove()
+    {
+        transform.Translate(Vector2.left * speed *  Time.deltaTime);
+    }
+
 }
