@@ -1,30 +1,22 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-
 public class PlayerScript : MonoBehaviour
 {
-
     private Rigidbody2D rb;
-
     [SerializeField] float speed = 10;
     [SerializeField] float jumpForce = 10;
     [SerializeField] float healthPoints = 300;
     [SerializeField] bool isDead;
     [SerializeField] bool winState;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Start() // Start is called once before the first execution of Update after the MonoBehaviour is created
     {
         rb = GetComponent<Rigidbody2D>();
-
     }
-    // Update is called once per frame
-    void Update()
+    void Update() // Update is called once per frame
     {
         float moveInput = Input.GetAxis("Horizontal"); 
         rb.linearVelocity = new Vector2 (moveInput * speed, rb.linearVelocity.y);
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
@@ -40,7 +32,7 @@ public class PlayerScript : MonoBehaviour
         {
             winState = true;
             Debug.Log("You Win!");
-            
+            Application.Quit();
         }
         if (collision.gameObject.tag == "Enemy")
         {
@@ -55,9 +47,14 @@ public class PlayerScript : MonoBehaviour
         Destroy(gameObject);
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
-
     public void TakeDamage(float damage)
     {
         healthPoints -= damage;
+    }
+    public void addHealth(float health)
+        { healthPoints += health; }
+    public void showHealth()
+    {
+        Debug.Log(healthPoints);
     }
 }
