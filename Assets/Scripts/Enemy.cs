@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerReference.TakeDamage(damage);
+           // PlayerReference.TakeDamage(damage);
         }
     }
 

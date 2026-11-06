@@ -3,12 +3,10 @@ using UnityEngine;
 public class Collectable : MonoBehaviour, CollectInterface
 {
     [SerializeField] bool isCollected;
-    [SerializeField] float healthIncrease = 20f;
-
+    PlayerScript player;
     public void Capture (PlayerScript player)
     { isCollected = true;
-    player.addHealth(healthIncrease);
-        player.showHealth();
+        Debug.Log("Captured");
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -16,6 +14,7 @@ public class Collectable : MonoBehaviour, CollectInterface
         if ( (collision.CompareTag("Player")))
         {
             Capture(collision.GetComponent<PlayerScript>());
+            Debug.Log("Collided");
         }
     }
     // Update is called once per frame
@@ -24,6 +23,8 @@ public class Collectable : MonoBehaviour, CollectInterface
         if (isCollected == true)
         {
             Destroy(gameObject);
+            player.IncreaseScore();
+            Debug.Log("Collected");
         }
     }
     
