@@ -9,12 +9,13 @@ public class Collectable : MonoBehaviour, CollectInterface
         Debug.Log("Captured");
     }
 
-    void OnCollision2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if ( (collision.CompareTag("Player")))
         {
             Capture(collision.GetComponent<PlayerScript>());
             Debug.Log("Collided");
+            isCollected = true;
         }
     }
     // Update is called once per frame
