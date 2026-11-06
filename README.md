@@ -22,7 +22,7 @@ The singleton pattern is used for the game manager and for the player,
 # Factory Pattern
 ---
 ### Purpose
-The apple spawns in every so often making this perfect for the game
+The apple spawns in every so often making this perfect for the game and theres no reason why the game manager needs to know what is being created it just needs to create it. 
 ### Implementation
 the apple spawns in using factory
 ---
