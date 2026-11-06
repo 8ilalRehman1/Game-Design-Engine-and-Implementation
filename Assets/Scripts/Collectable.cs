@@ -9,7 +9,7 @@ public class Collectable : MonoBehaviour, CollectInterface
         Debug.Log("Captured");
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollision2D(Collider2D collision)
     {
         if ( (collision.CompareTag("Player")))
         {
